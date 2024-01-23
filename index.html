@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./tailwinde/tailwinde.js"></script>
+    <!-- Option 1: Include in HTML -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <title>Sidebar</title>
+</head>
+<body class="bg-blue-600 font-['poppins']">
+    <span class="mx-6 cursor-pointer bg-black p-2 rounded" onclick="Open()">
+        <i class="bi bi-filter-left text-3xl text-white"></i>
+    </span>
+    <div class="sidebar fixed top-0 bottom-0 overflow-y-auto lg:left-0 left-[-300px] p-2 w-[300px] text-center bg-slate-900 transition-all ease-in duration-300" id="sidebar" >
+        <div class="text-gray-200 font-['poppins']">
+            <div class="flex p-2.5 mt-4 mt-1 items-center">
+                <i class="bi bi-app-indicator ml-2 py-1 px-2 bg-blue-600 text-2xl rounded-md"></i>
+                <h1 class="font-bold text-gray-200 ml-2 text-[15px]">Tailwindbar</h1>
+                <i class="bi bi-x ml-20 cursor-pointer" onclick="Open()"></i>
+            </div>
+            <hr class="my-2 text-gray-600">
+            <div class="p-2.5 mt-3 flex items-center px-4 duration-300 bg-slate-600 rounded-md">
+                <i class="bi bi-search text-md"></i>
+                <input type="text" placeholder="search" class="w-full text-[15px] bg-transparent text-['poppins'] ml-4 text-white-600 rounded-md focus:outline-none">
+            </div>
+            <div class="p-2.5 mt-3 flex items-center px-4 duration-300 cursor-pointer hover:bg-blue-600 rounded-md">
+                <i class="bi bi-house-door-fill mb-1"></i>
+               <span class="text-[15px] ml-4 text-slate-400">Home</span>
+            </div>
+            <div class="p-2.5 mt-3 flex items-center px-4 duration-300 cursor-pointer hover:bg-blue-600 rounded-md">
+                <i class="bi bi-bookmark-fill mb-1"></i>
+               <span class="text-[15px] ml-4 text-slate-400">Book Mark</span>
+            </div>
+        </div>
+        <hr class="my-2 text-gray-600">
+
+        <div class="p-2.5 mt-3 flex items-center px-4 duration-300 cursor-pointer hover:bg-blue-600 rounded-md" onclick="dropdown()">
+            <i class="bi bi-chat-left-text-fill text-white"></i>
+           <div class="flex items-center w-full justify-between">
+            <span class="text-[15px] ml-4 text-slate-400">Chat box</span>
+            <span class="text-sm rotate-180 text-white" ><i class="bi bi-chevron-down  " ></i></span>
+           </div>
+        </div>
+        <div class="text-left text-sm mx-auto mt-2 w-4/5 hidden" id="submenue">
+            <h1 class="p-2 hover:bg-blue-600 cursor-pointer rounded-md text-white mt-1">Social Midea</h1>
+            <h1 class="p-2 hover:bg-blue-600 cursor-pointer rounded-md text-white mt-1">Social Midea</h1>
+            <h1 class="p-2 hover:bg-blue-600 cursor-pointer rounded-md text-white mt-1">Social Midea</h1>
+        </div>
+        <div class="p-2.5 mt-3 flex items-center px-4 duration-300 cursor-pointer hover:bg-blue-600 rounded-md">
+            <i class="bi bi-box-arrow-in-right text-gray-100 mb-1 text-md"></i>
+           <span class="text-[15px] ml-4 text-slate-400">Logout</span>
+        </div>
+    </div>
+
+
+
+
+    <script>
+       function dropdown(){
+            document.querySelector('#submenue').classList.toggle("hidden");
+            document.querySelector("#arrow").classList.toggle("rotate-0")
+        }
+        dropdown()
+       function Open(){
+        document.querySelector(".sidebar").classList.toggle("left-[-300px]")
+        }
+    </script>
+
+
+
+</body>
+</html>
